@@ -61,9 +61,6 @@ nav {
     word-spacing: 0;
 }
 
-nav ul {
-    display: flex;
-}
 
 nav ul li {
     list-style: none;
@@ -115,14 +112,49 @@ nav ul li a:last-child {
 }
 
 .toggle {
+    display: block;
+    margin-left: 4rem;
     color: white;
     font-size: 4rem;
     text-align: right;
-    display: none;
     cursor: pointer;
     z-index: 11;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    position: fixed;
+    top: 10%;
+    right: 10%;
+}
+.fa-bars {
+    display: block;
 }
 
+.fa-times {
+    display: none;
+}
+
+.toggle-icon-on {
+    display: none;
+}
+
+.toggle-icon-off {
+    display: block;
+}
+
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(61, 61, 61);
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    z-index: 10;
+}
 
 /* About section */
 
@@ -209,14 +241,6 @@ footer {
         font-size: 2.6rem;
     }
 }
-@media (min-width: 1300px) {
-    .company-name a {
-        font-size: 7rem;
-    }
-    .company-name a span {
-        font-size: 4.6rem;
-    }
-}
 @media (max-width: 768px) {
     .header-heading {
         letter-spacing: 0.1rem;
@@ -229,15 +253,11 @@ footer {
         width: 60%;
         text-align: center;
     }
-    .toggle {
-        display: block;
-        margin-left: 4rem;
-    }
     nav ul {
         display: none;
     }
     nav {
-    justify-content: space-evenly;
+        justify-content: space-evenly;
     }
     .company-name {
         text-align: center;
@@ -248,20 +268,39 @@ footer {
     .company-name a span {
         font-size: 4rem;
     }
-    .mobile-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+}
+
+@media (max-width: 600px){
+    .company-name {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: yellowgreen;
-        background-attachment: fixed;
-        width: 100%;
-        height: 100vh;
+        top: 6%;
+        left: 5%;
+    }
+    .company-name a {
+        font-size: 3.4rem;
+    }
+    .company-name a span {
+        font-size: 2.6rem;
+    }
+    .header-heading {
+        letter-spacing: 0.1rem;
+        font-size: 3rem;
+    }
+    .btn-header {
+        top: 70%;
+        padding: 0.6rem 2rem;
+        font-size: 2rem;
+        width: 60%;
         text-align: center;
-        z-index: 10;
+    }
+}
+
+@media (min-width: 769px) {
+    .toggle {
+        display: none;
+    }
+    nav ul {
+        display: flex;
     }
 }
 
@@ -273,38 +312,41 @@ footer {
         background-color: rgba(0,0,0,0.3);
         transform: translate(-50%, -55%);
     }
-    
     .btn-header:active,
     .btn-header:focus {
         outline: none;
         transform: translate(-50%, -50%);
     }
-
     nav ul li a::before,
-    nav ul li a::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 0.2rem;
-    background-color:white;
-    left: 0;
-    transform: scaleX(0);
-    transition: all 0.3s;
-    }
-
-    nav ul li a::before {
-    top: 0;
-    transform-origin: left;
-    }   
-
     nav ul li a::after {
-    bottom: 0;
-    transform-origin: right;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0.2rem;
+        background-color:white;
+        left: 0;
+        transform: scaleX(0);
+        transition: all 0.3s;
     }
-
+    nav ul li a::before {
+        top: 0;
+        transform-origin: left;
+    }   
+    nav ul li a::after {
+        bottom: 0;
+        transform-origin: right;
+    }
     nav ul li a:hover::before, 
     nav ul li a:hover::after {
-    transform: scaleX(1);
+        transform: scaleX(1);
+    }
+}
+@media (min-width: 1300px) {
+    .company-name a {
+        font-size: 7rem;
+    }
+    .company-name a span {
+        font-size: 4.6rem;
     }
 }
 
