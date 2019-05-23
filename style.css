@@ -284,15 +284,17 @@ footer {
     }
     .header-heading {
         letter-spacing: 0.1rem;
-        font-size: 3rem;
+        font-size: 3.6rem;
+        top: 50%;
     }
     .btn-header {
-        top: 70%;
+        top: 80%;
         padding: 0.6rem 2rem;
         font-size: 2rem;
         width: 60%;
         text-align: center;
     }
+    
 }
 
 @media (min-width: 769px) {
