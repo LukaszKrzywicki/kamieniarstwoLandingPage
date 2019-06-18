@@ -111,7 +111,11 @@ nav ul li a:last-child {
     transition: 0.2s;
 }
 
-.toggle {
+.hamburger {
+    z-index: 11;
+}
+
+/* .toggle {
     display: block;
     margin-left: 4rem;
     color: white;
@@ -123,8 +127,8 @@ nav ul li a:last-child {
     position: fixed;
     top: 10%;
     right: 10%;
-}
-.fa-bars {
+} */
+/* .fa-bars {
     display: block;
 }
 
@@ -138,7 +142,7 @@ nav ul li a:last-child {
 
 .toggle-icon-off {
     display: block;
-}
+} */
 
 .mobile-menu {
     display: flex;
@@ -270,37 +274,10 @@ footer {
     }
 }
 
-@media (max-width: 600px){
-    .company-name {
-        position: absolute;
-        top: 6%;
-        left: 5%;
-    }
-    .company-name a {
-        font-size: 3.4rem;
-    }
-    .company-name a span {
-        font-size: 2.6rem;
-    }
-    .header-heading {
-        letter-spacing: 0.1rem;
-        font-size: 3.6rem;
-        top: 50%;
-    }
-    .btn-header {
-        top: 80%;
-        padding: 0.6rem 2rem;
-        font-size: 2rem;
-        width: 60%;
-        text-align: center;
-    }
-    
-}
-
 @media (min-width: 769px) {
-    .toggle {
+    /* .toggle {
         display: none;
-    }
+    } */
     nav ul {
         display: flex;
     }

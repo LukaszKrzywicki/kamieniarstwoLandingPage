@@ -39,15 +39,15 @@
   // }
   // })
 
-  $(document).ready(function(){
-      $('.toggle').click(function(){
-          $('ul').toggleClass('mobile-menu');
-      })
-      $('.toggle').click(function(){
-        $('.fa-bars').toggleClass('toggle-icon-on');
-        $('.fa-times').toggleClass('toggle-icon-off');   
-    })  
-  })
+  // $(document).ready(function(){
+  //     $('.toggle').click(function(){
+  //         $('ul').toggleClass('mobile-menu');
+  //     })
+  //     $('.toggle').click(function(){
+  //       $('.fa-bars').toggleClass('toggle-icon-on');
+  //       $('.fa-times').toggleClass('toggle-icon-off');   
+  //   })  
+  // })
 
 //   if ($(window).width() < 769) {
 //     $('ul').removeClass('mobile-menu');
@@ -56,9 +56,26 @@
 // }
 
 $(window).resize(function() {
-  if ($(window).innerWidth() > 786) {
+  if ($(window).outerWidth() > 769) {
       $('ul').removeClass('mobile-menu');
+      $('.hamburger').css("display", "none");
+  }
+  else if ($(window).outerWidth() < 769) {
+      $('.hamburger').css("display", "block");
   }
 }).resize(); // trigger resize event initially
+
+
+var $hamburger = $(".hamburger");
+$hamburger.on("click", function(e) {
+  $hamburger.toggleClass("is-active");
+    $('ul').toggleClass('mobile-menu');
+});
+$($hamburger).click(function(){
+  $(".mobile-menu").animate({
+    height: 'toggle'
+  });
+}); 
+
 
   
